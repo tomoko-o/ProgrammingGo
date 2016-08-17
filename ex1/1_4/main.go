@@ -24,12 +24,10 @@ func main() {
 		}
 	}
 
-	// fmt.Println(filenames)
-	// fmt.Println(counts)
 	for line, n := range counts {
 		if n > 1 {
 			names, sep := "", ""
-			for name, _ := range filenames[line] {
+			for name := range filenames[line] {
 				names += sep + name
 				sep = "/"
 			}
@@ -44,13 +42,10 @@ func countLines(f *os.File, counts map[string]int, filenames map[string]map[stri
 		str := input.Text()
 		counts[str]++
 		if filenames != nil {
-			// filename := make(map[string]int)
-			// filename[f.Name()]++
 			if filenames[str] == nil {
 				filenames[str] = make(map[string]int)
 			}
 			filenames[str][f.Name()]++
-			//			fmt.Println(filenames)
 		}
 	}
 }
