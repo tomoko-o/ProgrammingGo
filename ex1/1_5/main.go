@@ -44,7 +44,7 @@ func lissajous(out io.Writer) {
 			img.SetColorIndex(size+int(x*size+0.5), size+int(y*size+0.5), blackIndex)
 		}
 
-		phase += 1
+		phase += 1.0
 		anim.Delay = append(anim.Delay, delay)
 		anim.Image = append(anim.Image, img)
 	}
