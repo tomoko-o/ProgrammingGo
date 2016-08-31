@@ -26,7 +26,8 @@ func main() {
 			bx, by := corner(i, j)
 			cx, cy := corner(i, j+1)
 			dx, dy := corner(i+1, j+1)
-			if !(math.IsNaN(ax) && math.IsNaN(ay) && math.IsNaN(by) && math.IsNaN(by) && math.IsNaN(cy) && math.IsNaN(cy) && math.IsNaN(dy) && math.IsNaN(dy)) {
+			if !(math.IsNaN(ax) && math.IsNaN(ay) && math.IsNaN(bx) && math.IsNaN(by) &&
+				math.IsNaN(cx) && math.IsNaN(cy) && math.IsNaN(dx) && math.IsNaN(dy)) {
 				fmt.Printf("<polygon points='%g,%g %g,%g %g,%g %g,%g'/>\n", ax, ay, bx, by, cx, cy, dx, dy)
 			}
 		}
